@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import *
 import uuid
 
-BASE_URL = 'www.hjjjd.com'
+BASE_URL = 'https://recorder-api.onrender.com'
 
 class VideoSerializers(serializers.ModelSerializer):
     full_video_url = serializers.SerializerMethodField()
