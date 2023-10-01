@@ -11,17 +11,24 @@ class TimeStamp(models.Model):
         ordering = ['-created_at', '-updated_at']
 
 class Recordings(TimeStamp):
-    name = models.CharField(max_length=270)
+    title = models.CharField(max_length=300, blank=True, null=True)
+    name = models.CharField(max_length=270, blank=True, null=True)
+    transcript = models.TextField(blank=True, null=True)
+    video = models.FileField(("Video File"), upload_to='videos/', null=True, blank=True)
+    is_completed = models.BooleanField(default=False)
+    
+    
     
     
     def __str__(self):
         return self.name 
     
     
-class VideoRecordings(TimeStamp):
-    recording = models.ForeignKey(Recordings, on_delete=models.CASCADE)
-    video = models.FileField(("Video File"), upload_to='videos/', null=True)
+# class VideoRecordings(TimeStamp):
+#     recording = models.ForeignKey(Recordings, on_delete=models.CASCADE)
+#     video = models.FileField(("Video File"), upload_to='videos/', null=True)
+#     transcript = models.TextField(blank=True, null=True)
     
     
-    def __str__(self):
-        return self.recordings.name + ": " + str(self.video)
+#     def __str__(self):
+#         return self.recordings.name + ": " + str(self.video)
