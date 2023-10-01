@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from base.views import CreateRecordingView, GetDataView, MergeRecordingView, AllRecordingsView
+from base.views import CreateRecordingView, GetDataView, AllRecordingsView, SingleVideoView
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -37,7 +37,10 @@ urlpatterns = [
     path('api/create/', CreateRecordingView.as_view()),
     path('api/all/', AllRecordingsView.as_view()),
     path('api/save-data/<int:id>/', GetDataView.as_view()),
-    path('api/merge-data/', MergeRecordingView.as_view()),
+    # path('api/merge-data/', MergeRecordingView.as_view()),
+    path('api/<int:id>/', SingleVideoView.as_view()),
+    
+    
     # path('api/recording/<int:id>/', VideoRecordingsView.as_view()),
     # path('api/video/<int:id>/', SingleVideoView.as_view()),
     # path('api/stream/<int:id>/', RecordingVideoView.as_view()),
