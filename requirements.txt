@@ -17,8 +17,8 @@ django-cors-headers
 django-filter==23.3
 djangorestframework==3.14.0
 drf-yasg==1.21.7
-filelock==3.12.4
-greenlet==2.0.2
+filelock
+greenlet
 gunicorn==21.2.0
 idna==3.4
 imageio==2.31.4
