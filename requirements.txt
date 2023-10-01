@@ -25,7 +25,7 @@ imageio
 imageio-ffmpeg
 inflection
 Jinja2==3.1.2
-kombu==5.3.2
+kombu
 lit
 llvmlite
 Markdown==3.4.4
