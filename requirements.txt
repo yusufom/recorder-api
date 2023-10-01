@@ -13,7 +13,7 @@ decorator==4.4.2
 Django==3.2.13
 django-background-tasks==1.2.5
 django-compat==1.0.15
-django-cors-headers==4.2.0
+django-cors-headers
 django-filter==23.3
 djangorestframework==3.14.0
 drf-yasg==1.21.7
