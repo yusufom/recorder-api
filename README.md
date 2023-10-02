@@ -8,7 +8,7 @@ The **Recorder API** is a Django application that allows you to create, save, an
 
 - Create a new video record.
 - Method: POST
-- Endpoint: `https://video-player-ct0v.onrender.com/create_video/`
+- Endpoint: `https://recorder-api.onrender.com/api/create/`
 - Response: JSON containing the created video ID.
 
 Example Request:
