@@ -62,7 +62,7 @@ six
 SQLAlchemy
 sqlparse
 sympy
-tiktoken
+# tiktoken
 torch
 tqdm
 triton
