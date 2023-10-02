@@ -8,7 +8,7 @@ from .models import Recordings
 from rest_framework.views import APIView
 from django.conf import settings
 import os
-from .tasks import merge_recording
+# from .tasks import merge_recording
 
 
 # Create your views here.
