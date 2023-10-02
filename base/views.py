@@ -106,8 +106,8 @@ class MergeRecordingView(generics.UpdateAPIView):
         if recording_id:
             try:
                 recording = Recordings.objects.get(id=recording_id)
-                print(recording)
-                merge_recording(recording_id)
+                # print(recording)
+                # merge_recording(recording_id)
                 recording.is_completed = True
                 recording.save()
                 return Response({'message': 'Video files is currently being merged.'}, status=status.HTTP_200_OK)
