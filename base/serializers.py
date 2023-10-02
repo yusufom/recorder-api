@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import *
 import uuid
+from django.core.validators import FileExtensionValidator
+
 
 BASE_URL = 'https://recorder-api.onrender.com'
 
@@ -58,3 +60,10 @@ class GetRecordingSerializer(serializers.ModelSerializer):
 class GetRecordingVideoSerializer(serializers.Serializer):
     recording = GetRecordingSerializer()
     # videos = VideoSerializers(many=True)
+    
+class TranscriptionSerializer(serializers.ModelSerializer):
+    video = serializers.FileField(validators=[FileExtensionValidator(allowed_extensions=['mp3', 'mp4'])])
+    
+    class Meta:
+        model = Recordings
+        fields = ('id', 'title', 'transcript', 'video')

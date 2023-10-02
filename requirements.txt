@@ -52,6 +52,7 @@ packaging
 Pillow
 proglog
 prompt-toolkit
+pydub
 python-dateutil
 pytz
 PyYAML
