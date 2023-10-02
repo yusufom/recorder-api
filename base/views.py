@@ -8,7 +8,7 @@ from .models import Recordings
 from rest_framework.views import APIView
 from django.conf import settings
 import os
-# from .tasks import merge_recording
+from .tasks import merge_recording
 
 
 # Create your views here.
@@ -107,7 +107,7 @@ class MergeRecordingView(generics.UpdateAPIView):
             try:
                 recording = Recordings.objects.get(id=recording_id)
                 # print(recording)
-                # merge_recording(recording_id)
+                merge_recording(recording_id)
                 recording.is_completed = True
                 recording.save()
                 return Response({'message': 'Video files is currently being merged.'}, status=status.HTTP_200_OK)
